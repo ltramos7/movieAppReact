@@ -2,6 +2,7 @@ import React from 'react'
 import Header from './components/headerSection/HeaderSection'
 import SearchArea from './components/searchArea/searchArea'
 import SearchResultList from './components/searchResultList/searchResultList'
+import SelectedMovieContent from './components/selectedMovieContent/selectedMovieContent'
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Header/>
       <SearchArea/>
       <SearchResultList/>
+      <SelectedMovieContent/>
     </div>
   );
 }
