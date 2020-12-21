@@ -1,0 +1,10 @@
+** This is a file to write the general structure of the components **
+
+<body>
+    <header/>
+    <searchArea/>
+    <searchResultList/>
+        <matchingMovie/>
+        <matchingMovie/>
+    <selectedMovieContent/>
+</body>
