@@ -4,10 +4,10 @@ import MatchingMovie from '../matchingMovie/matchingMovie'
 export default class searchResultList extends Component {
     render() {
         return (
-            <div>
+            <section id="search-results-list">
                 <p> searchResultList</p>
                 <MatchingMovie/>
-            </div>
+            </section>
         )
     }
 }

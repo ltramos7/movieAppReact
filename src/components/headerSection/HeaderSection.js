@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export default class HeaderSection extends Component {
     render() {
         return (
-            <div id="header-section">
+            <section id="header-section">
                 <div id="title">
                     <h3>Welcome To Movie Search!</h3>
                 </div>
@@ -13,7 +13,7 @@ export default class HeaderSection extends Component {
                         <button>Signup</button>
                     </form>
                 </div>
-            </div>
+            </section>
         )
     }
 }
