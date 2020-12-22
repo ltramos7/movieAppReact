@@ -3,6 +3,7 @@ import Header from './components/headerSection/HeaderSection'
 import SearchArea from './components/searchArea/searchArea'
 import SearchResultList from './components/searchResultList/searchResultList'
 import SelectedMovieContent from './components/selectedMovieContent/selectedMovieContent'
+import './App.css'
 
 function App() {
   return (

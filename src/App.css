@@ -1,0 +1,16 @@
+
+#header-section{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 1;
+    background-color: orange;
+}
+
+#title{
+    grid-column: 1/6;
+}
+
+#nav-btns{
+    grid-column: -2/-1;
+}
+
