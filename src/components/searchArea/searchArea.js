@@ -6,15 +6,12 @@ import React, { Component } from 'react'
 // http://www.omdbapi.com/?apikey=acb05252&s=whatever the search is
 // appending the s= is what allows me to search for matching movies that are typed in
 
+// get the matching movies
+// put them into the array in the state of App component
+// passed down the array of matching movies to searchResultList Componennt
+
 
 export default class searchArea extends Component {
-
-    constructor(props){
-        super(props)
-        this.state = {
-            searchedMovie : " "
-        }
-    }
 
     setSearchValue = (e) => {
         // get the information and place it in the state
@@ -23,7 +20,7 @@ export default class searchArea extends Component {
         this.setState({
             searchedMovie: e.target.value
         })
-        //might need to parse out the search. when there are spaces, replace with +...let's see
+    
 
     }
 
@@ -34,18 +31,18 @@ export default class searchArea extends Component {
         fetch(`http://www.omdbapi.com/?apikey=acb05252&s=${this.state.searchedMovie}`)
         .then(resp => resp.json() )
         // .then(matchingMovies => {console.log(matchingMovies)})
-        .then(data => this.movieInformation(data))
+        .then(data => this.props.movieInformation(data))
         // i want to pass the matching movieMovies informatin to the searchResultList component. To do that, I need to pass the props back up to App component, then backdown to searchResultList component
     }
 
     // i think i want this function in searchResultList component
-    movieInformation = (matchingMoviesData) => {
-        // console.log(matchingMoviesData.Search)
-        const matchingMovies = matchingMoviesData.Search
-        matchingMovies.forEach( movie => {
-            console.log("Title: ", movie.Title, "Year: ", movie.Year)
-        })
-    }
+    // movieInformation = (matchingMoviesData) => {
+    //     // console.log(matchingMoviesData.Search)
+    //     const matchingMovies = matchingMoviesData.Search
+    //     matchingMovies.forEach( movie => {
+    //         console.log("Title: ", movie.Title, "Year: ", movie.Year)
+    //     })
+    // }
 
 
 
