@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import MatchingMovie from '../matchingMovie/matchingMovie'
+import MovieCard from '../movieCard/movieCard'
 
 export default class searchResultList extends Component {
     
@@ -12,10 +13,7 @@ export default class searchResultList extends Component {
         const matchingMovies = this.props.matchingMovies
         return matchingMovies.map( movie => {
             return(
-                <div>
-                    <p>Title: {movie.Title}</p>
-                    <p>Year: {movie.Year}</p>
-                </div>
+                <MovieCard key={movie.imdbID} movie={movie}/>
             )    
         })
     }
