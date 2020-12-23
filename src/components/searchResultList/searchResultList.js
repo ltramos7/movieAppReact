@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import MatchingMovie from '../matchingMovie/matchingMovie'
+// import MatchingMovie from '../matchingMovie/matchingMovie'
 import MovieCard from '../movieCard/movieCard'
 
 export default class searchResultList extends Component {
@@ -24,11 +24,8 @@ export default class searchResultList extends Component {
         return (
 
             <section id="search-results-list">
-                <p> searchResultList</p>
-              
+                <h1> Search Results List</h1>
                 {this.renderMovieInformation()}
-
-                <MatchingMovie/>
             </section>
         )
     }

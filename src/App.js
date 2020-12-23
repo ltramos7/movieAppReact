@@ -3,7 +3,8 @@ import React, { Component } from 'react'
 import Header from './components/headerSection/HeaderSection'
 import SearchArea from './components/searchArea/searchArea'
 import SearchResultList from './components/searchResultList/searchResultList'
-import SelectedMovieContent from './components/selectedMovieContent/selectedMovieContent'
+import Nominations from './components/nominations/nominations'
+// import SelectedMovieContent from './components/selectedMovieContent/selectedMovieContent'
 import './App.css'
 
 export default class App extends Component {
@@ -31,7 +32,9 @@ export default class App extends Component {
         <Header/>
         <SearchArea movieInformation={this.movieInformation}/>
         <SearchResultList matchingMovies={this.state.matchingMovies}/>
-        <SelectedMovieContent/>
+        <Nominations/>
+        
+        {/* <SelectedMovieContent/> don't need this right now for the code challenge */}
       </div>
     )
   }
