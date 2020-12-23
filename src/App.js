@@ -27,7 +27,7 @@ export default class App extends Component {
   render(){
     return (
       //only components should live here. Most logic will live in the imported components
-      <div>
+      <div className="app">
         <Header/>
         <SearchArea movieInformation={this.movieInformation}/>
         <SearchResultList matchingMovies={this.state.matchingMovies}/>

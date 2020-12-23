@@ -8,3 +8,14 @@
         <matchingMovie/>
     <selectedMovieContent/>
 </body>
+
+2020-12-23
+
+<body>
+    <header/>
+    <searchArea/>
+    <searchResultList/>
+        <movieCard/>
+        <movieCard/>
+    <selectedMovieContent/>
+</body>

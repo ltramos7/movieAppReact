@@ -25,11 +25,7 @@ export default class searchResultList extends Component {
 
             <section id="search-results-list">
                 <p> searchResultList</p>
-                <p>.</p>
-                <p>.</p>
-                <p>.</p>
-                <p>.</p>
-                <p>.</p>
+              
                 {this.renderMovieInformation()}
 
                 <MatchingMovie/>
