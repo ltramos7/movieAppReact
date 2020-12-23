@@ -13,7 +13,7 @@ export default class searchResultList extends Component {
         const matchingMovies = this.props.matchingMovies
         return matchingMovies.map( movie => {
             return(
-                <MovieCard key={movie.imdbID} movie={movie}/>
+                <MovieCard key={movie.imdbID} movie={movie} nominatedMovie={this.props.nominatedMovie}/>
             )    
         })
     }

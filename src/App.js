@@ -13,7 +13,8 @@ export default class App extends Component {
     super(props)
     this.state = {
         searchedMovie : " ",
-        matchingMovies: []
+        matchingMovies: [],
+        nominatedMovie: {}
     }
   }
 
@@ -31,7 +32,7 @@ export default class App extends Component {
       <div className="app">
         <Header/>
         <SearchArea movieInformation={this.movieInformation}/>
-        <SearchResultList matchingMovies={this.state.matchingMovies}/>
+        <SearchResultList matchingMovies={this.state.matchingMovies} nominatedMovie={this.state.nominatedMovie}/>
         <Nominations/>
         
         {/* <SelectedMovieContent/> don't need this right now for the code challenge */}
