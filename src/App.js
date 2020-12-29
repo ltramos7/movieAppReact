@@ -16,7 +16,7 @@ export default class App extends Component {
     this.state = {
         searchedMovie : " ",
         matchingMovies: [],
-        nominatedMovie: []
+        nominatedMovies: []
     }
   }
 
@@ -33,21 +33,19 @@ export default class App extends Component {
 
   setNominatedMovie = (movie) => {
     this.setState({
-      nominatedMovie: [...this.state.nominatedMovie, movie]
+      nominatedMovies: [...this.state.nominatedMovies, movie]
     })
-    // might need to use the spread operator to include the previous nominated movies
   }
 
 
   render(){
-    console.log("hope this works!!!", this.state.nominatedMovie);
+    console.log("nominated Movies: ", this.state.nominatedMovies);
     return (
       <div className="app">
         <Header/>
         <SearchArea movieInformation={this.movieInformation}/>
-        {/* <SearchResultList matchingMovies={this.state.matchingMovies} nominatedMovie={this.state.nominatedMovie} setNominatedMovie={()=>this.setNominatedMovie(nominatedMovie)}/> */}
         <SearchResultList matchingMovies={this.state.matchingMovies} setNominatedMovie={this.setNominatedMovie}/>
-        <Nominations nominatedMovie={this.state.nominatedMovie}/>
+        <Nominations nominatedMovie={this.state.nominatedMovies}/>
         
         {/* <SelectedMovieContent/> don't need this right now for the code challenge */}
       </div>
