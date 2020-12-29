@@ -26,7 +26,6 @@ export default class searchArea extends Component {
 
     searchMovieFetch = (e) =>{
         e.preventDefault()
-        console.log("search movie fetch function hit")
         // will want to add api key variable for protection reasons
         fetch(`http://www.omdbapi.com/?apikey=acb05252&s=${this.state.searchedMovie}`)
         .then(resp => resp.json() )

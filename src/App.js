@@ -14,7 +14,10 @@ export default class App extends Component {
     this.state = {
         searchedMovie : " ",
         matchingMovies: [],
-        nominatedMovie: {}
+        nominatedMovie: {
+          title: "",
+          year: ""
+        }
     }
   }
 
@@ -23,16 +26,28 @@ export default class App extends Component {
     this.setState({
       matchingMovies: matchingMoviesResults
     })
-}
+  }
+
+  setNominatedMovie = (movie) => {
+    // this.setState = ({
+    //     nominatedMovie : {
+    //         title: movie.Title,
+    //         year: movie.Year
+    //     }
+    // }) 
+    console.log("set nominated movie function reached....", movie)
+  }
 
 
   render(){
+    // console.log(this.state.nominatedMovie)
     return (
       //only components should live here. Most logic will live in the imported components
       <div className="app">
         <Header/>
         <SearchArea movieInformation={this.movieInformation}/>
-        <SearchResultList matchingMovies={this.state.matchingMovies} nominatedMovie={this.state.nominatedMovie}/>
+        {/* <SearchResultList matchingMovies={this.state.matchingMovies} nominatedMovie={this.state.nominatedMovie} setNominatedMovie={()=>this.setNominatedMovie(nominatedMovie)}/> */}
+        <SearchResultList matchingMovies={this.state.matchingMovies} setNominatedMovie={this.setNominatedMovie}/>
         <Nominations/>
         
         {/* <SelectedMovieContent/> don't need this right now for the code challenge */}
