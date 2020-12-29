@@ -27,24 +27,19 @@ export default class App extends Component {
     })
   }
 
-  // addNote(newNote) {
-  //   this.setState({ toDoNotes: [...this.state.toDoNotes, newNote]})
-  // }
-
   setNominatedMovie = (movie) => {
     this.setState({
-      nominatedMovies: [...this.state.nominatedMovies, movie]
+      nominatedMovies: [...this.state.nominatedMovies, movie],
     })
   }
 
 
   render(){
-    console.log("nominated Movies: ", this.state.nominatedMovies);
     return (
       <div className="app">
         <Header/>
         <SearchArea movieInformation={this.movieInformation}/>
-        <SearchResultList matchingMovies={this.state.matchingMovies} setNominatedMovie={this.setNominatedMovie}/>
+        <SearchResultList matchingMovies={this.state.matchingMovies} setNominatedMovie={this.setNominatedMovie} />
         <Nominations nominatedMovie={this.state.nominatedMovies}/>
         
         {/* <SelectedMovieContent/> don't need this right now for the code challenge */}
