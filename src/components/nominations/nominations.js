@@ -9,7 +9,7 @@ export default class nominations extends Component {
             return (
                 <div key={movie.imdbID}>
                     <p>{movie.Title} ({movie.Year})</p>
-                    <button>Remove</button>
+                    <button onClick={()=>this.props.removeNominatedMovie(movie)}>Remove</button>
                 </div>
             )
         }) 
