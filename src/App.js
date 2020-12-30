@@ -51,7 +51,12 @@ export default class App extends Component {
     for(let i=0; i < nominatedMoviesList.length; i++){
       if(nominatedMoviesList[i] == movie){
         // console.log(nominatedMoviesList[i])
-        nominatedMoviesList.splice(i,1)
+        let updatedList = nominatedMoviesList.splice(i,1)
+
+        this.setState({
+          nominatedMovies: [...this.state.nominatedMovies, updatedList]
+        })
+
       } 
     }
     console.log("hopefully updated nominated Movie list: ", this.state.nominatedMovies)
