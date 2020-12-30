@@ -7,8 +7,8 @@ export default class nominations extends Component {
         let nominatedMovies = this.props.nominatedMovie
         return nominatedMovies.map(movie => {
             return (
-                <div>
-                    <p key={movie.imdbID}>{movie.Title} ({movie.Year})</p>
+                <div key={movie.imdbID}>
+                    <p>{movie.Title} ({movie.Year})</p>
                     <button>Remove</button>
                 </div>
             )
