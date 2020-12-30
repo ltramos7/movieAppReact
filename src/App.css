@@ -1,4 +1,8 @@
-
+body{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+}
 #header-section{
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -12,5 +16,15 @@
 
 #nav-btns{
     grid-column: -2/-1;
+}
+
+#nominated-movie-container{
+    background-color: burlywood;
+    grid-column: -2/-1; 
+}
+
+#search-results-list{
+    background-color: honeydew;
+    grid-column: 1/2;
 }
 
