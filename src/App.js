@@ -28,9 +28,17 @@ export default class App extends Component {
   }
 
   setNominatedMovie = (movie) => {
-    this.setState({
-      nominatedMovies: [...this.state.nominatedMovies, movie],
-    })
+    //if nominatedMovies.length < 6 set the movie, else alert that max nominations is 5
+
+    if(this.state.nominatedMovies.length < 5){
+      this.setState({
+        nominatedMovies: [...this.state.nominatedMovies, movie],
+      })
+    }else {
+      alert("Sorry! Only up to 5 nominations are allowed.")
+    }
+
+    
   }
 
 

@@ -13,10 +13,10 @@ export default class nominations extends Component {
 
     render() {
         return (
-            <div id="nominated-movie-container">
+            <section id="nominated-movie-container">
                 <h1>Nominated Movies</h1>
                 {this.renderNominatedMovies()}
-            </div>
+            </section>
         )
     }
 }
