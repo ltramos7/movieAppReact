@@ -10,9 +10,14 @@ export default class movieCard extends Component {
     }
 
     disableButton = () => {
-        this.setState({
-            disabled: true
-        })
+        // need conditional if nominated movies < 5 then set state
+        // need to pass down the length/count through props. 
+        // console.log("nominatedMoviesLenght: ", this.props.nominatedMoviesLength)
+        if(this.props.nominatedMoviesLength < 5){
+            this.setState({
+                disabled: true
+            })
+        }   
     }
 
     render() {

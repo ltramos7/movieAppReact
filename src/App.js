@@ -41,16 +41,12 @@ export default class App extends Component {
   }
 
   removeNominatedMovie = (selectedMovie) => {
-    // let nominatedMoviesList = this.state.nominatedMovies
-    console.log("removeNominatedMovie: ", selectedMovie)
-    this.setState({
-      nominatedMovies: this.state.nominatedMovies.filter(function(movie){
+      this.setState({
+      nominatedMovies: this.state.nominatedMovies.filter((movie)=>{
         return movie !== selectedMovie
       })
     })
   }
-
-
 
   render(){
     console.log("state nominatedMovies: ", this.state.nominatedMovies);
@@ -58,7 +54,7 @@ export default class App extends Component {
       <div className="app">
         <Header/>
         <SearchArea movieInformation={this.movieInformation}/>
-        <SearchResultList matchingMovies={this.state.matchingMovies} setNominatedMovie={this.setNominatedMovie} />
+        <SearchResultList matchingMovies={this.state.matchingMovies} setNominatedMovie={this.setNominatedMovie} nominatedMoviesLength={this.state.nominatedMovies.length} />
         <Nominations nominatedMovie={this.state.nominatedMovies} removeNominatedMovie={this.removeNominatedMovie}/>
         
         {/* <SelectedMovieContent/> don't need this right now for the code challenge */}

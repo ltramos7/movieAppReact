@@ -16,14 +16,13 @@ export default class searchResultList extends Component {
         const matchingMovies = this.props.matchingMovies
         return matchingMovies.map( movie => {
             return(
-                <MovieCard key={movie.imdbID} movie={movie} setNominatedMovie={this.props.setNominatedMovie} disabled={this.props.disabled}/>
+                <MovieCard key={movie.imdbID} movie={movie} setNominatedMovie={this.props.setNominatedMovie} nominatedMoviesLength={this.props.nominatedMoviesLength} disabled={this.props.disabled}/>
             )    
         })
     }
    
 
     render() {
-        
         return (
             <section id="search-results-list">
                 <h1> Search Results List</h1>
