@@ -7,8 +7,6 @@ import Nominations from './components/nominations/nominations'
 // import SelectedMovieContent from './components/selectedMovieContent/selectedMovieContent'
 import './App.css'
 
-//able to get movie info after clicking on nominate button. Now i want to add that nominated moive info into appropriate section
-
 export default class App extends Component {
 
   constructor(props){
@@ -38,45 +36,24 @@ export default class App extends Component {
     }
   }
 
-  removeNominatedMovie = (movie) => {
-    // console.log("remove nominated movie function reached", movie)
-    let nominatedMoviesList = this.state.nominatedMovies
-    // map through nominatedMovies list. if movie == nominatedMovie movie then remove it
-    // return nominatedMoviesList.map(nominatedMovie => {
-    //   if(nominatedMovie == movie){
-    //     console.log("true")
-    //   }
-    // })
-
-    for(let i=0; i < nominatedMoviesList.length; i++){
-      if(nominatedMoviesList[i] == movie){
-        // console.log(nominatedMoviesList[i])
-        let updatedList = nominatedMoviesList.splice(i,1)
-
-        this.setState({
-          nominatedMovies: [...this.state.nominatedMovies, updatedList]
-        })
-
-      } 
-    }
-    console.log("hopefully updated nominated Movie list: ", this.state.nominatedMovies)
+  matchingMovieFunc = (movie) => {
+    console.log("matching Movie Test function", movie)
   }
 
-  // function removeItemAll(arr, value) {
-  //   var i = 0;
-  //   while (i < arr.length) {
-  //     if (arr[i] === value) {
-  //       arr.splice(i, 1);
-  //     } else {
-  //       ++i;
-  //     }
-  //   }
-  //   return arr;
-  // }
+  removeNominatedMovie = (selectedMovie) => {
+    // let nominatedMoviesList = this.state.nominatedMovies
+    console.log("removeNominatedMovie: ", selectedMovie)
+    this.setState({
+      nominatedMovies: this.state.nominatedMovies.filter(function(movie){
+        return movie !== selectedMovie
+      })
+    })
+  }
+
 
 
   render(){
-    console.log("original nominated list? ", this.state.nominatedMovies);
+    console.log("state nominatedMovies: ", this.state.nominatedMovies);
     return (
       <div className="app">
         <Header/>
