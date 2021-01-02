@@ -46,6 +46,7 @@ export default class App extends Component {
         return movie !== selectedMovie
       })
     })
+    // once the movie is removed, it should have the ability to renominate the movie again, meaning the "Nominate" button is no longer disabled. 
   }
 
   render(){
@@ -55,7 +56,7 @@ export default class App extends Component {
         <Header/>
         <SearchArea movieInformation={this.movieInformation}/>
         <SearchResultList matchingMovies={this.state.matchingMovies} setNominatedMovie={this.setNominatedMovie} nominatedMoviesLength={this.state.nominatedMovies.length} />
-        <Nominations nominatedMovie={this.state.nominatedMovies} removeNominatedMovie={this.removeNominatedMovie}/>
+        <Nominations nominatedMovie={this.state.nominatedMovies} removeNominatedMovie={this.removeNominatedMovie} matchingMovies={this.state.matchingMovies}/>
         
         {/* <SelectedMovieContent/> don't need this right now for the code challenge */}
       </div>

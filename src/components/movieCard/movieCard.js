@@ -10,15 +10,20 @@ export default class movieCard extends Component {
     }
 
     disableButton = () => {
-        // need conditional if nominated movies < 5 then set state
-        // need to pass down the length/count through props. 
-        // console.log("nominatedMoviesLenght: ", this.props.nominatedMoviesLength)
         if(this.props.nominatedMoviesLength < 5){
             this.setState({
                 disabled: true
             })
         }   
     }
+
+    activateNominateButton = (selectedMovie) => {
+        console.log("trying to activate button.", selectedMovie)
+        this.setState({
+          disabled:false
+        })
+      }
+    // maybe I check to see if the movie is still in the nominated list, if not make disabled to false
 
     render() {
         return (
